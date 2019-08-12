@@ -1,0 +1,11 @@
+class ThirdMakeQuestions < ActiveRecord::Migration[5.2]
+  def change
+    create_table :answers do |t|
+      t.string :text_body
+      t.belongs_to :topic, foreign_key: true
+      t.belongs_to :user, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end
